@@ -1,5 +1,8 @@
 # DOOM — recreated via AEGIS · LUMEN
 
+### ▶️ Play it live: **https://orlando-vazquez-career.github.io/doom-aegis-lumen/**
+*(desktop · click to lock the mouse · WASD + mouse · click/Ctrl to fire · 1-5 weapons · Tab map)*
+
 A playable, DOOM-style first-person shooter for the browser. **Vanilla JavaScript, Canvas 2D
 raycaster, zero runtime dependencies, 100% procedural assets** — every texture, sprite, sound, and
 the HUD marine face is generated in code. No binary files.
