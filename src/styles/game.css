@@ -1,0 +1,49 @@
+/* game.css — direccion A "Hell-Brown '93". CRT lens = wow-01.
+   Tokens cross-ref DESIGN.md / palette.js. */
+:root {
+  --black: #0a0806;
+  --techbase: #2a1d12;
+  --bone: #d8c8a0;
+  --blood: #d22020;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background: #000; overflow: hidden; }
+body {
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Courier New", monospace; color: var(--bone);
+  user-select: none; -webkit-user-select: none;
+}
+#stage { position: relative; line-height: 0; }
+#screen {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: #000;
+  cursor: crosshair;
+}
+/* CRT lens (wow-01): scanlines + viñeta + leve aberracion */
+#crt {
+  position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.16) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: multiply;
+  box-shadow: inset 0 0 110px 26px rgba(0, 0, 0, 0.5);
+}
+#crt::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 56%, rgba(0,0,0,0.4) 100%);
+}
+#hint {
+  position: absolute; left: 0; right: 0; bottom: 12%;
+  text-align: center; z-index: 3; pointer-events: none;
+  font: bold 14px "Courier New", monospace; letter-spacing: 3px;
+  color: var(--blood); text-shadow: 1px 1px 0 #000;
+  animation: blink 1.1s steps(2, start) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { #hint { animation: none; } }

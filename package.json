@@ -1,0 +1,22 @@
+{
+  "name": "doom-aegis-lumen",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DOOM recreated as a web app via the AEGIS (engineering) + LUMEN (art direction) protocols. Vanilla JS + Canvas 2D raycaster, zero runtime deps, 100% procedural assets.",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "shot": "node tools/screenshot.mjs"
+  },
+  "keywords": [
+    "doom",
+    "raycaster",
+    "canvas",
+    "aegis",
+    "lumen"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}
